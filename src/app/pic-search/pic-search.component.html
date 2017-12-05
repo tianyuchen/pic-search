@@ -1,0 +1,25 @@
+<div class="input-group">
+  <input
+    #searchBox id="search-box"
+    type="text"
+    class="form-control"
+    placeholder="Search for..."
+    required>
+  <span class="input-group-btn">
+    <button
+      class="btn btn-secondary"
+      (click)="search(searchBox.value)"
+      type="button">Search
+    </button>
+  </span>
+</div>
+
+<div class="album text-muted">
+  <div class="container">
+    <div class="row">
+      <div class="card" *ngFor="let pic of pics">
+        <img src={{pic.webformatURL}} alt="Card image cap" class="contain">
+      </div>
+    </div>
+  </div>
+</div>

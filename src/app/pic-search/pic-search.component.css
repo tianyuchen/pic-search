@@ -1,0 +1,33 @@
+.album {
+  background-color: #f7f7f7;
+  min-height: 29rem;
+  padding-bottom: 3rem;
+  padding-top: 3rem;
+}
+
+.card {
+  border: 0;
+  float: left;
+  padding: .75rem;
+  width: 33.333%;
+}
+
+.card > img {
+  margin-bottom: .75rem;
+}
+
+.card-text {
+  font-size: 85%;
+}
+
+.contain {
+  height: 100%;
+  object-fit: contain;
+  width: 100%;
+}
+
+.input-group {
+  margin: auto;
+  max-width: 30rem;
+  padding-bottom: 3rem;
+}
