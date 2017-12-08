@@ -1,7 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 
-import { Pic } from '../pic';
-import { PicService } from '../pic.service';
+import { Pic } from '../../pic';
+import { PicService } from '../../services/pic.service';
 
 @Component({
   selector: 'app-pic-search',
@@ -10,17 +10,21 @@ import { PicService } from '../pic.service';
 })
 export class PicSearchComponent implements OnInit {
   pics: Pic[];
+  searchText: string;
 
   constructor(private picService: PicService) {}
 
   search(term: string): void {
     this.picService.getPics(term).subscribe(
       data => this.pics = data.hits,
-      err => console.log(err)
+      err => console.log(err),
     );
   }
 
   ngOnInit(): void {
+    if (this.picService.oldTerm) {
+      this.searchText = this.picService.oldTerm;
+      this.search(this.searchText);
+    }
   }
-
 }

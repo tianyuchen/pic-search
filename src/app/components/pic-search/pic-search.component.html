@@ -4,9 +4,11 @@
     type="text"
     class="form-control"
     placeholder="Search for..."
+    [(ngModel)]="searchText"
     required>
   <span class="input-group-btn">
     <button
+      [disabled]="!searchText"
       class="btn btn-secondary"
       (click)="search(searchBox.value)"
       type="button">Search
@@ -18,7 +20,9 @@
   <div class="container">
     <div class="row">
       <div class="card" *ngFor="let pic of pics">
-        <img src={{pic.webformatURL}} alt="Card image cap" class="contain">
+        <a routerLink="/detail/{{pic.id}}">
+          <img class="contain" src={{pic.webformatURL}}>
+        </a>
       </div>
     </div>
   </div>
